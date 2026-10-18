@@ -1196,17 +1196,18 @@ export class SettingsPage extends LitElement {
             <option value="" disabled ?selected=${!validPathHashMode}>
 	      Unknown (unavailable)
             </option>
-            ${([
-              [0, '0 - 1 byte'],
-              [1, '1 - 2 byte'],
-              [2, '2 - 3 byte'],
-            ] as const).map(([val, label]) => html`
-              <option
-                value=${val}
-		?selected=${validPathHashMode && currentPathHashMode === val}
-                ${label}
-              </option>
-            `)}
+	    ${([
+		[0, '0 - 1 byte'],
+		[1, '1 - 2 byte'],
+		[2, '2 - 3 byte'],
+	      ] as const).map(([val, label]) => html`
+		<option
+		  value=${val}
+		  ?selected=${validPathHashMode && currentPathHashMode === val}
+		>
+		  ${label}
+		</option>
+	      `)}
           </select>
         </div>
       </div>
